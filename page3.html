@@ -1,0 +1,344 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Complete your order</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+        $('#checkBtn').click(function()
+        {
+          var errors = 0;
+          $("form .input").each(function(i, obj){
+            if( !$(obj).val() ) {
+                  $(obj).addClass('redBorder');
+                  errors++;
+              } else {
+                $(obj).removeClass('redBorder');
+              }
+          });
+
+          if (errors > 0) {
+            /*$('#alert-danger').removeClass('hidden');*/
+             $('#alert-danger').show();}
+             /*$('#passwordsNoMatchRegister').hide()
+                $('#alert-danger').addClass('alert-danger');
+              }
+            /*$('#okDiv').removeClass('ok');
+                $('#okDiv').addClass('hidden');
+          } */else {
+             $('#dialog').show();}
+              /*$('#warnDiv').addClass('hidden');
+              $('#warnDiv').removeClass('alert-danger');
+            $('#okDiv').removeClass('hidden');
+                $('#okDiv').addClass('ok');
+          }*/
+        });
+      });
+
+</script>
+<style>
+ body {
+    margin: 0;
+    padding: 0;
+    background-color: #F7F7F7;
+}
+ #title {
+  margin-top: 20px;
+}
+
+#title span {
+  display: block;
+  margin: 0 auto;
+  width: 600px;
+  text-align: center;
+}
+#main-title {
+  text-transform: uppercase;
+  font-size: 150%;
+}
+#secondary-title {
+  font-family: "Times New Roman";
+  font-style: italic;
+  font-size: 110%;
+  color: #909090;
+}
+
+.container {
+  width: 600px;
+  height: 50px;
+  margin: 50px auto; 
+}
+.progressbar {
+  margin: 0;
+  padding: 0;
+  counter-reset: step;
+}
+.progressbar li {
+  list-style-type: none;
+  width: 33%;
+  float: left;
+  font-size: 12px;
+  position: relative;
+  text-align: center;
+  color: #7d7d7d;
+}
+.progressbar li:before {
+  width: 30px;
+  height: 30px;
+  content: counter(step);
+  counter-increment: step;
+  line-height: 30px;
+  border: 2px solid #7d7d7d;
+  display: block;
+  text-align: center;
+  margin: 0 auto 10px auto;
+  border-radius: 50%;
+  background-color: white;
+}
+.progressbar li:after {
+  width: 100%;
+  height: 2px;
+  content: '';
+  position: absolute;
+  background-color: #7d7d7d;
+  top: 15px;
+  left: -50%;
+  z-index: -1;
+}
+.progressbar li:first-child:after {
+  content: none;
+}
+.progressbar li.active {
+  color: green;
+}
+.progressbar li.active:before {
+  border-color: #76A8BC;
+}
+.progressbar li.active + li:after {
+  background-color: #76A8BC;
+}
+.content {
+  margin: 0 auto;
+  width: 900px;
+  line-height: 1.8;
+}
+#side-image {
+  border-style: solid;
+  border-color: #F7F7F7;
+  float: right;
+  padding: 10px;
+}
+#shopping-cart {
+  background-color: #FAFAFA;
+  padding: 10px;
+  overflow: hidden;
+}
+
+#cart-name {
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  font-size: 150%
+  padding-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+.input {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+/*.fields {
+  background-color: blue;
+} */
+.hidden {
+  display: none;
+  height: 0px;
+}
+./*warn {
+  background-color: red;
+  text-align: center;
+  width: 100%;
+  height: auto;
+}
+/*.ok {
+  background-color: green;
+  border-left-style: dashed;
+  text-align: center;
+  text-decoration-color: white;
+  width: 100%;
+  height: auto;
+}*/
+/*.redBorder {
+  border-color: red;
+}*/
+.form-group label {
+    text-transform: uppercase;
+    line-height: 1.8;
+    font-weight: 500;
+    font-size: 13px;
+    margin-top: 5px;  
+}
+.h4 {
+  font-size: 15px;
+  font-family: "Times New Roman";
+  font-style: italic;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+.form-control {
+  width: 100%;
+  margin:0;
+}
+
+.box__dragndrop,
+.box__uploading,
+.box__success,
+.box__error {
+  display: none;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+    background-color: inherit;
+}
+.btn-file input[type=file] {
+  position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+   color: #76A8BC;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+.button {
+  display: inline-block;
+  float: right;
+
+}
+/*#save {
+  float: right;
+  /*position: absolute;
+  right: 645px;
+  top: 860px;
+*/
+.hide { position:absolute; top:-1px; left:-1px; width:1px; height:1px; }
+.btn-info {
+  float: right;
+}
+
+  </style>
+</head>
+<body>
+    <div id="title">
+        <span id="main-title">
+            Complete your order
+        </span>
+        <span id="secondary-title">
+            Making interior design personal, affordable and easy
+        </span>
+    </div>
+<div class="container">
+        <ul class="progressbar">
+            <li>View Card</li>
+            <li>Payment</li>
+            <li class="active">Additional Info</li>
+        </ul>
+    </div>
+<div class="content">
+        <div id="side-image">
+            <img src="pasted-image-1862.png">
+        </div>
+        <div id="shopping-cart">
+            <div>
+                <span id="cart-name"><b>
+                    Basic Information
+                </b></span>
+            </div>
+<div class="fields">
+<!--<div class="hidden message" id="warnDiv">
+      <p>
+        PLEASE COMPLETE ALL FIELDS
+      </p>
+    </div>
+    <div class="hidden message" id="okDiv">
+      <p>
+        CONGRATS! YOUR ORDER HAS BEEN PROCESSED
+      </p>
+    </div>-->
+<form name="contact_form" method="post" action="dumb.htm" onsubmit="return validate_form ( );">
+
+<p class="font">I am looking for a <input class="input" type="text" name="product" maxlength="254" placeholder="product(ex.chair,sofa)" required=""> for my <input class="input" type="text" name="room" maxlength="254" placeholder="room(ex.living-room, bedroom)" required="">
+ in <input class="input" type="text" name="color" maxlength="254" placeholder="  color or materials" required=""> and my budget is <input class="input" type="text" name="price" maxlength="254" placeholder="  price (ex. $500)" required="">.</p>
+  
+</form>
+</div>
+<div class="form-group">
+  <label for="comment">anny additional information share helps us give the best recommendations</label>
+  <textarea class="form-control" rows="5" id="comment" placeholder="Helpful information would be approximate dimensions of the product you're looking for, other items your planning on replacing in your room, materials you prefer, materials or colors you like or do not like, etc."></textarea>
+</div>
+<h4 class="h4"><b>Upload Photos</b></h4>
+<p><i>The best photos capture the key features of the room (main furniture, layout, room features) from 2 or
+3 corners of the room. Capture key colors, textures and patterns that you want to keep.</i></p>
+<form class="box">
+  <div class="box__input">
+    <input class="box__file" type="file" name="files[]" id="file" data-multiple-caption="{count} files selected" multiple />
+    <label for="file"><strong>Choose a file</strong><span class="box__dragndrop"> or drag it here</span>.</label>
+    <button class="box__button" type="submit">Upload</button>
+  </div>
+  <div class="box__uploading">Uploading&hellip;</div>
+  <div class="box__success">Done!</div>
+  <div class="box__error">Error! <span></span>.</div>
+</form>
+<h4 class="h4"><b>Additional Information (Optional)</b></h4>
+<div class="form-group">
+        <label for="url">paste a url for a pinterest board, houzz idea book or other website</label>
+        <input class="form-control" id="url">
+      </div>
+  <span class="btn btn-default btn-file" class="label">
+    Attach decorist design board <input type="file">
+</span>
+  
+<iframe name="hiddenFrame" class="hide"></iframe>
+<div class="button">
+<form action="receiver.pl" method="post" target="hiddenFrame">
+  <input value="Save draft" id='save' class="btn btn-default" type="submit"></form>
+ <form method="post" action="mailto:youremail@youremail.com" >
+         <button type="button" class="btn btn-info" id="checkBtn" data-toggle="modal" data-target="#myModal">Send to designer</button>
+
+         <div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog" id="dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h3 class="modal-title">Thanks! Your personal shopper will start shoping!</h3>
+      </div>
+      <div class="modal-body">
+        <p>You will receive an email with a link to your shopping solution in 5 business days!.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+       </form>
+       </div>
+       </div>
+       
+       <div id="footer"></div>
+</body>
+</html>
